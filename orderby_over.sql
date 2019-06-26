@@ -33,3 +33,24 @@ SELECT first_name
 	,SUM(salary) OVER(ORDER BY hire_date ROWS BETWEEN 1 PRECEDING AND CURRENT ROW)
 FROM employees
 
+-- Adjacent calculations between 3 rows
+SELECT first_name
+	,hire_date
+	,department
+	,salary
+	,SUM(salary) OVER(ORDER BY hire_date ROWS BETWEEN 3 PRECEDING AND CURRENT ROW)
+FROM employees
+
+SELECT first_name
+	,hire_date
+	,department
+	,salary
+	,SUM(salary) OVER(ORDER BY hire_date ROWS BETWEEN 1000 PRECEDING AND CURRENT ROW)
+FROM employees
+
+"91571594"
+
+SELECT SUM(salary)
+FROM employees
+
+ 
