@@ -46,7 +46,7 @@ SELECT continent
 FROM sales
 GROUP BY GROUPING SETS(continent,country,city,())
 
--- ROLLUP
+-- ROLLUP: Three, two, and single column roll up
 SELECT continent
 	,country
 	,city
@@ -54,7 +54,7 @@ SELECT continent
 FROM sales
 GROUP BY ROLLUP(continent,country,city)
 
--- CUBE
+-- CUBE: GROUPING BY individually and combination of two columns. 
 SELECT continent
 	,country
 	,city
